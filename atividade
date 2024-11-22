@@ -1,0 +1,55 @@
+#include <stdio.h>
+
+int contador=0;
+
+void incrementarContador(){
+    contador++;
+    printf ("Valor atual de contador (variável glogal): %d\n", contador);
+}
+
+void exemploVariavelLocal(){
+    int valorLocal=10;
+    valorLocal++;
+    printf ("Valor da variável local: %d\n", valorLocal);
+    
+}
+int main (){
+    for (int i=0; i<5;i++){
+        printf("\nChamada %d:\n", i+1);
+        incrementarContador();
+        exemploVariavelLocal();
+    }
+    return 0;
+}
+
+
+
+2)
+
+#include <stdio.h>
+
+int resultado=0;
+
+void calcularSomaGlobal(int a, int b){
+    resultado= a+b;
+    printf("Variável global %d\n", resultado);
+}
+
+void calcularSomaLocal(int a, int b){
+    resultado=a+b;
+    printf("Variável local %d\n", resultado);
+}
+
+int main(){
+    int num1=5, num2=10;
+    printf("Usando Variável global:\n");
+    calcularSomaGlobal(num1, num2);
+    printf("\nUsando a variável local:\n");
+    calcularSomaLocal(num1, num2);
+    printf("\nValor final da variável global:%d\n", resultado);
+    
+    return 0;
+}
+
+
+
